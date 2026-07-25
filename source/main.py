@@ -39,7 +39,7 @@ def home(request: Request, db: Session = Depends(get_db)):
 
 @app.get("/add_student", response_class=HTMLResponse)
 def add_student(request: Request, db: Session = Depends(get_db)):
-    template = jinja_env.get_template("add_student.py")
+    template = jinja_env.get_template("add_student.html")
     html = template.render(request=request)
     return HTMLResponse(content=html)
 
